@@ -1,0 +1,96 @@
+Flutter crash report; please file at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter --no-color run --machine --device-id=emulator-5554 lib/main.dart
+
+## exception
+
+VersionCheckError: VersionCheckError: Command exited with code 69: git log -n 1 --pretty=format:%ad --date=iso
+Standard error: 
+
+Agreeing to the Xcode/iOS license requires admin privileges, please run “sudo xcodebuild -license” and then retry this command.
+
+
+
+
+```
+#0      _runSync (package:flutter_tools/src/version.dart:439)
+#1      FlutterVersion._latestGitCommitDate (package:flutter_tools/src/version.dart:129)
+#2      FlutterVersion.frameworkCommitDate (package:flutter_tools/src/version.dart:120)
+#3      FlutterVersion.checkFlutterVersionFreshness (package:flutter_tools/src/version.dart:235)
+<asynchronous suspension>
+#4      FlutterCommandRunner.runCommand (package:flutter_tools/src/runner/flutter_command_runner.dart:252)
+<asynchronous suspension>
+#5      CommandRunner.run.<anonymous closure> (package:args/command_runner.dart:109)
+#6      new Future.sync (dart:async/future.dart:222)
+#7      CommandRunner.run (package:args/command_runner.dart:109)
+#8      FlutterCommandRunner.run (package:flutter_tools/src/runner/flutter_command_runner.dart:166)
+#9      run.<anonymous closure> (package:flutter_tools/runner.dart:90)
+<asynchronous suspension>
+#10     AppContext._run (package:flutter_tools/src/base/context.dart:76)
+<asynchronous suspension>
+#11     AppContext.runInZone.<anonymous closure> (package:flutter_tools/src/base/context.dart:66)
+#12     _rootRun (dart:async/zone.dart:1126)
+#13     _CustomZone.run (dart:async/zone.dart:1023)
+#14     runZoned (dart:async/zone.dart:1501)
+#15     AppContext.runInZone (package:flutter_tools/src/base/context.dart:65)
+#16     run (package:flutter_tools/runner.dart:61)
+<asynchronous suspension>
+#17     main (package:flutter_tools/executable.dart:48)
+<asynchronous suspension>
+#18     main (file:///Users/abhinavasrivastava/Documents/Developer/flutter/flutter/packages/flutter_tools/bin/flutter_tools.dart:16)
+#19     _startIsolate.<anonymous closure> (dart:isolate-patch/dart:isolate/isolate_patch.dart:277)
+#20     _RawReceivePortImpl._handleMessage (dart:isolate-patch/dart:isolate/isolate_patch.dart:165)
+```
+
+## flutter doctor
+
+```
+encountered exception: VersionCheckError: Command exited with code 69: git log -n 1 --pretty=format:%ad --date=iso
+Standard error: 
+
+Agreeing to the Xcode/iOS license requires admin privileges, please run “sudo xcodebuild -license” and then retry this command.
+
+
+
+
+#0      _runSync (package:flutter_tools/src/version.dart:439)
+#1      FlutterVersion._latestGitCommitDate (package:flutter_tools/src/version.dart:129)
+#2      FlutterVersion.frameworkCommitDate (package:flutter_tools/src/version.dart:120)
+#3      FlutterVersion.frameworkDate (package:flutter_tools/src/version.dart:83)
+#4      _FlutterValidator.validate (package:flutter_tools/src/doctor.dart:236)
+<asynchronous suspension>
+#5      Doctor.diagnose (package:flutter_tools/src/doctor.dart:112)
+<asynchronous suspension>
+#6      _doctorText.<anonymous closure> (package:flutter_tools/runner.dart:237)
+#7      AppContext._run (package:flutter_tools/src/base/context.dart:76)
+<asynchronous suspension>
+#8      AppContext.runInZone.<anonymous closure> (package:flutter_tools/src/base/context.dart:66)
+#9      _rootRun (dart:async/zone.dart:1126)
+#10     _CustomZone.run (dart:async/zone.dart:1023)
+#11     runZoned (dart:async/zone.dart:1501)
+#12     AppContext.runInZone (package:flutter_tools/src/base/context.dart:65)
+#13     _doctorText (package:flutter_tools/runner.dart:237)
+<asynchronous suspension>
+#14     _createLocalCrashReport (package:flutter_tools/runner.dart:212)
+<asynchronous suspension>
+#15     _handleToolError (package:flutter_tools/runner.dart:167)
+<asynchronous suspension>
+#16     run.<anonymous closure> (package:flutter_tools/runner.dart:94)
+<asynchronous suspension>
+#17     AppContext._run (package:flutter_tools/src/base/context.dart:76)
+<asynchronous suspension>
+#18     AppContext.runInZone.<anonymous closure> (package:flutter_tools/src/base/context.dart:66)
+#19     _rootRun (dart:async/zone.dart:1126)
+#20     _CustomZone.run (dart:async/zone.dart:1023)
+#21     runZoned (dart:async/zone.dart:1501)
+#22     AppContext.runInZone (package:flutter_tools/src/base/context.dart:65)
+#23     run (package:flutter_tools/runner.dart:61)
+<asynchronous suspension>
+#24     main (package:flutter_tools/executable.dart:48)
+<asynchronous suspension>
+#25     main (file:///Users/abhinavasrivastava/Documents/Developer/flutter/flutter/packages/flutter_tools/bin/flutter_tools.dart:16)
+#26     _startIsolate.<anonymous closure> (dart:isolate-patch/dart:isolate/isolate_patch.dart:277)
+#27     _RawReceivePortImpl._handleMessage (dart:isolate-patch/dart:isolate/isolate_patch.dart:165)
+```
